@@ -1,0 +1,14 @@
+# Налаштування редакторів коду (IDE)
+.vscode/
+.idea/
+*.swp
+*.sublime-workspace
+
+# Системне сміття Windows та macOS
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Тимчасові файли та логи
+*.tmp
+*.log
