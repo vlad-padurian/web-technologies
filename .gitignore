@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Налаштування редакторів коду (IDE)
 .vscode/
 .idea/
@@ -12,3 +13,19 @@ desktop.ini
 # Тимчасові файли та логи
 *.tmp
 *.log
+=======
+# Dependencies
+node_modules/
+
+# IDE / Editors
+.vscode/
+.idea/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Logs and environment files
+*.log
+.env
+>>>>>>> 2826fc62ba73068d4b8edb2e70c02d542c9661b3
