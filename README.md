@@ -1,30 +1,17 @@
-\# Repository: web-technologies
 
+## Student Information
+- **Name:** Vladyslav Padurian
+- **University:** Yuriy Fedkovych Chernivtsi National University (ЧНУ)
+- **Specialty:** Computer Science
 
+## About This Repository
+This repository contains laboratory assignments and practical tasks for the Web Technologies course.
 
-\## Student Information
-
-\* \*\*Full Name:\*\* Padurian Vladyslav Oleksandrovych
-
-\* \*\*Group:\*\* 243/2
-
-
-
-\## Favorite Programming Languages \& Technologies
-
-\* Visual Studio Code
-
-\* Python
-
-\* Java
-
-\* C++
-
-\* HTML5 / CSS3
-
-\* Git \& GitHub
-
-
+## Technologies & Tools
+- HTML5, CSS3
+- Python, C++
+- Git & GitHub (SSH connection)
+- Visual Studio Code, Git Bash
 
 
 
