@@ -13,30 +13,30 @@ div{
     text-align: justify;
 }
 
-.red-text{
+.text-colored{
     color: red;
 }
 
-.no-wrap{
+.text-nowrap{
     white-space: nowrap;
 }
 
-#second-p{
+#paragraph{
     font-style: italic;
     font-weight: bold;
 }
 
-.shadow-effect{
+.text-shadow{
     text-shadow: 5px -5px 3px rgba(218, 92, 92, 0.6);
 }
 
-.div-style-1{
+.text-crossed.text-uppercase{
     text-decoration: line-through;
     text-transform: uppercase;
     text-indent: 50px;
 }
 
-.div-style-2{
+.text-shadow.text-spacing{
     letter-spacing: 30px;
     word-spacing: 50px;
 }

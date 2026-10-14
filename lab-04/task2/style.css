@@ -2,19 +2,19 @@
  font-family: 'Times New Roman', Times, serif;
 }
 
-.recipe-container{
+.recipe{
     width: 600px;
     margin: 20px auto;
     padding: 20px;
     border: 1px solid #000;
 }
 
-.main-title{
+.recipe-title{
     color: red;
     text-align: center;
 }
 
-.sub-title{
+.recipe-subtitle{
     font-style: italic;
     text-align: center;
 }
@@ -27,11 +27,11 @@
 font-weight: bold;
 }
 
-.highlight{
+.text-highlight{
     background-color: yellow;
 }
 
-.green-line {
+.recipe-line {
     border: none;
     height: 4px;
     background-color: green;
@@ -39,7 +39,7 @@ font-weight: bold;
     margin: 25px auto;
 }
 
-.footer-quote{
+.recipe-footer{
     font-style: italic;
     text-align: center;
 }
@@ -48,10 +48,10 @@ font-weight: bold;
     margin: 4px 0;
 }
 
-.underlined{
+.text-underlined{
  text-decoration: underline;
 }
 
-.crossed{
+.text-crossed{
     text-decoration: line-through;
 }
