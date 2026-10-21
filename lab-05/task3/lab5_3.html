@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>task3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div>
+
+    <h1>Анкета студента</h1>
+    <form action="lab4_3.html" method="get">
+        
+        <fieldset>
+            <legend>Особисті дані</legend>
+
+            <p>
+                <label for="get-fullname">ПІБ (текстове поле):</label><br>
+                <input type="text" id="get-fullname" name="fullname" placeholder="Іванов Іван Іванович" required tabindex="1">
+            </p>
+
+            <p>
+                <label for="get-email">Електронна пошта (email):</label><br>
+                <input type="email" id="get-email" name="email" placeholder="example@domain.com" required autocomplete="off" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" tabindex="2">
+            </p>
+
+            <p>
+                <label for="get-phone">Номер телефону (tel):</label><br>
+                <input type="tel" id="get-phone" name="phone" placeholder="+380XXXXXXXXX" required pattern="^\+380\d{9}$" tabindex="3">
+            </p>
+
+            <p>
+                <label for="get-password">Пароль (password):</label><br>
+                <input type="password" id="get-password" name="password" placeholder="6 символів (A-Z, a-z, 0-9)" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6}" tabindex="4">
+            </p>
+
+            <p>
+                <label for="get-birthdate">Дата народження (date):</label><br>
+                <input type="date" id="get-birthdate" name="birthdate" required tabindex="5">
+            </p>
+
+        </fieldset>
+        <fieldset>
+            <legend>Опитування та вподобання</legend>
+            <p>
+                <strong>Ваш рівень освіти:</strong><br>
+                <label><input type="radio" name="education" value="basic" tabindex="6"> Середня</label><br>
+                <label><input type="radio" name="education" value="bachelor" tabindex="7"> Бакалавр</label><br>
+                <label><input type="radio" name="education" value="master" tabindex="8"> Магістр</label>
+            </p>
+
+            <p>
+                <strong>Форма навчання:</strong><br>
+                <label><input type="radio" name="study_form" value="fulltime" tabindex="9"> Денна</label><br>
+                <label><input type="radio" name="study_form" value="extramural" checked tabindex="10"> Заочна</label><br>
+                <label><input type="radio" name="study_form" value="distance" tabindex="11"> Дистанційна</label>
+            </p>
+
+            <p>
+                <strong>Сфери інтересів (checkbox):</strong><br>
+                <label><input type="checkbox" name="interests" value="web" tabindex="12"> Веб-розробка</label><br>
+                <label><input type="checkbox" name="interests" value="design" tabindex="13"> Дизайн</label><br>
+                <label><input type="checkbox" name="interests" value="mobile" tabindex="14"> Мобільна розробка</label><br>
+                <label><input type="checkbox" name="interests" value="qa" tabindex="15"> Тестування (QA)</label>
+            </p>
+
+            <p>
+                <label for="get-city">Оберіть ваше місто (select + option):</label><br>
+                <select id="get-city" name="city" tabindex="16">
+                    <option value="kyiv">Київ</option>
+                    <option value="lviv">Львів</option>
+                    <option value="chernivtsi" selected>Чернівці</option>
+                    <option value="odesa">Одеса</option>
+                    <option value="kharkiv">Харків</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="get-languages">Мови програмування (multiple, 6 значень):</label><br>
+                <select id="get-languages" name="languages" multiple size="4" tabindex="17">
+                    <option value="html_css">HTML/CSS</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="python">Python</option>
+                    <option value="cpp">C++</option>
+                    <option value="java">Java</option>
+                    <option value="php">PHP</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="get-tech-stack">Стек технологій (optgroup):</label><br>
+                <select id="get-tech-stack" name="tech_stack" tabindex="18">
+                    <optgroup label="Frontend">
+                        <option value="react">React</option>
+                        <option value="vue">Vue.js</option>
+                        <option value="angular">Angular</option>
+                    </optgroup>
+                    <optgroup label="Backend">
+                        <option value="nodejs">Node.js</option>
+                        <option value="django">Django</option>
+                        <option value="spring">Spring</option>
+                    </optgroup>
+                    <optgroup label="Database">
+                        <option value="postgresql">PostgreSQL</option>
+                        <option value="mysql">MySQL</option>
+                        <option value="mongodb">MongoDB</option>
+                    </optgroup>
+                    <optgroup label="DevOps">
+                        <option value="docker">Docker</option>
+                        <option value="git">Git</option>
+                        <option value="linux">Linux</option>
+                    </optgroup>
+                </select>
+            </p>
+
+            <p>
+                <label for="get-browser">Ваш улюблений браузер (datalist):</label><br>
+                <input type="text" id="get-browser" name="browser" list="browser-list" placeholder="Оберіть або введіть..." tabindex="19">
+                <datalist id="browser-list">
+                    <option value="Google Chrome">
+                    <option value="Mozilla Firefox">
+                    <option value="Safari">
+                    <option value="Microsoft Edge">
+                    <option value="Opera">
+                </datalist>
+            </p>
+
+            <p>
+                <label for="get-about">Коротко про себе (textarea):</label><br>
+                <textarea id="get-about" name="about" rows="4" cols="50" placeholder="Розкажіть про свої досягнення..." tabindex="20"></textarea>
+            </p>
+
+        </fieldset>
+
+        <p>
+            <button type="submit" tabindex="21">Надіслати (GET)</button>
+            <button type="reset" tabindex="22">Очистити форму</button>
+        </p>
+
+    </form>
+
+    <hr>
+
+    <form action="lab4_3.html" method="post" enctype="multipart/form-data">
+
+        <fieldset>
+            <legend>Завантаження аудіофайлів</legend>
+
+            <p>
+                <label for="post-audio">Оберіть аудіофайли (тільки аудіо, більше одного):</label><br>
+                <input type="file" id="post-audio" name="audio_files[]" accept="audio/*" multiple required tabindex="23">
+            </p>
+
+        </fieldset>
+
+        <p>
+            <button type="submit" tabindex="24">Надіслати файли (POST)</button>
+            <button type="reset" tabindex="25">Очистити</button>
+        </p>
+
+    </form>
+    <br>
+  <p><a href="../index.html">Повернутись на головну</a></p>
+</div>
+
+</body>
+</html>

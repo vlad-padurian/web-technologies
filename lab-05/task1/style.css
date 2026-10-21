@@ -1,0 +1,84 @@
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.plan {
+    background-color: rgb(255, 165, 0);
+    width: 500px;
+    padding: 20px;
+    color: white;
+}
+
+h1 {
+    font-size: 25px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+ul.main-list > li,
+ul.sub-list > li {
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+}
+
+ul.main-list {
+    background-color: rgb(103, 158, 128);
+    padding-right: 20px;
+    padding-left: 20px; /* Зменшуємо лівий відступ блоку */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+ul.main-list > li {
+    background-image: url('icons/main-list.png');
+    background-position: 0 10px; /* Ставимо іконку ближче до лівого краю */
+    padding-left: 35px; /* Невеликий відступ для тексту від іконки */
+    margin-bottom: 15px;
+}
+
+ul.sub-list {
+    font-size: 18px;
+    font-style: italic;
+    background-color: rgb(153, 180, 102);
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-bottom: 1px;
+}
+
+ul.sub-list > li {
+    margin-bottom: 10px;
+    padding-left: 40px;
+    background-position: left center;
+}
+
+.item-route    { background-image: url('icons/phone.png'); }
+.item-tickets  { background-image: url('icons/ticket.png'); }
+.item-hotel    { background-image: url('icons/hotel.png'); }
+.item-car-rent { background-image: url('icons/car.png'); }
+.item-bars     { background-image: url('icons/glass.png'); }
+.item-casino   { background-image: url('icons/dice.png'); }
+.item-museums  { background-image: url('icons/museum.png'); }
+.item-festivals{ background-image: url('icons/fest.png'); }
+
+span {
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+.lvl-1-title {
+    font-size: 20px;
+    font-weight: 700;
+    background-color: rgb(199, 124, 106);
+    margin-bottom: 10px;
+}
+
+.lvl-2-title {
+    background-color: rgb(218, 106, 32);
+}
+
+ul.sub-list span {
+    background-color: rgb(218, 106, 32);
+}

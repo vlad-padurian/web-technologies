@@ -1,0 +1,159 @@
+
+body {
+    margin: 0;
+    padding: 20px 0;
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #0b3d55;
+
+    background-color: #1b2a41;         
+    background-image: url('img/bg.jpg');
+    background-repeat: no-repeat;       
+    background-position: center;        
+    background-size: cover;             
+    background-attachment: fixed;      
+}
+
+main {
+    box-sizing: border-box;             
+    max-width: 900px;
+    min-width: 320px;
+    margin: 0 auto;                     
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.85);  
+
+    /* Що відбувається, коли вікно вужче за 320px:
+       min-width забороняє контейнеру стискатися менше 320px, тому він
+       перестає підлаштовуватися під вікно й стає ширшим за нього.
+       З'являється горизонтальна смуга прокрутки сторінки, а права частина
+       контейнера виходить за межі вікна й видна лише після прокручування.
+       Центрування margin: 0 auto теж перестає діяти: вільного місця немає,
+       тож автоматичні відступи дорівнюють 0 і контейнер притискається до лівого краю. */
+}
+
+h1 {
+    margin: 0 0 20px 0;
+    text-align: center;
+    color: #0d5a82;
+}
+
+h2 {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    color: #0d5a82;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+.tags div {
+    display: inline;                    
+    width: 200px;
+    height: 100px;
+    /* width і height НЕ діють на рядкові (inline) елементи: їхній розмір
+       визначається лише вмістом (текстом) та padding/border. Щоб ці
+       властивості запрацювали, потрібен display: block або inline-block. */
+    background-color: #8fd3f4;
+    border: 1px solid #0d5a82;
+}
+
+.tags span {
+    display: block;                     
+    width: 150px;                       
+    margin-top: 5px;
+    background-color: #33bbf1;
+    border: 1px solid #0d5a82;
+}
+
+.repeat div {
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    width: 200px;
+    height: 200px;
+    margin: 0 10px 10px 0;
+    border: 1px solid #0d5a82;
+    background-color: #ffffff;
+    background-image: url('img/icon.png');   
+}
+
+.repeat p,
+.scale p {
+    display: inline-block;
+    margin: 0;
+    padding: 4px 8px;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.repeat div:nth-of-type(1) {
+    background-repeat: repeat-x;        
+}
+
+.repeat div:nth-of-type(2) {
+    background-repeat: repeat-y;        
+}
+
+/* Різниця між space та round:
+   - space: картинка НЕ змінює розміру. Скільки цілих копій вміщується в блок,
+     стільки й малюється, а вільне місце порівну розподіляється ПРОМІЖКАМИ
+     між ними (першу й останню копії притиснуто до країв).
+   - round: проміжків немає. Розмір картинки трохи збільшується або зменшується
+     (розтягується/стискається), щоб ціла кількість копій заповнила блок точно. */
+.repeat div:nth-of-type(3) {
+    background-repeat: space;
+}
+
+.repeat div:nth-of-type(4) {
+    background-repeat: round;
+}
+
+.scale div {
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    width: 300px;
+    height: 200px;
+    margin: 0 10px 10px 0;
+    border: 2px solid #0d5a82;
+    background-color: #dfeaf2;          
+    background-image: url('img/photo.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.scale div:nth-of-type(1) {
+    background-size: contain;           
+}
+
+.scale div:nth-of-type(2) {
+    background-size: cover;            
+}
+
+.scroll div {
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    width: 400px;
+    max-height: 150px;
+    margin: 0 10px 10px 0;
+    padding: 8px;
+    overflow: auto;
+    border: 1px solid #0d5a82;
+    background-image: url('img/pattern.png');
+}
+
+/* Різниця у поведінці фону під час прокручування ВМІСТУ всередині блоку:
+   - scroll (за замовчуванням): фон прикріплений до самого блоку, тобто до його
+     видимої рамки. Коли текст усередині прокручується, візерунок стоїть на місці.
+   - local: фон прикріплений до вмісту блоку. Він прокручується разом із текстом,
+     тому візерунок «їде» вгору разом з абзацами. */
+.scroll div:nth-of-type(1) {
+    background-attachment: scroll;
+}
+
+.scroll div:nth-of-type(2) {
+    background-attachment: local;
+}
