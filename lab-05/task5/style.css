@@ -17,42 +17,28 @@ h2 {
     color: #0d5a82;
 }
 
-/* =====================================================
-   ЧАСТИНА 1. box-sizing
-   Обидва блоки мають однакові width, padding і border,
-   відрізняється тільки box-sizing.
-   ===================================================== */
 section:nth-of-type(1) > div {
-    display: inline-block;          /* блоки в ряд */
+    display: inline-block;          
     vertical-align: top;
     width: 300px;
     padding: 20px;
     border: 5px solid #0d5a82;
-    margin: 20px;                   /* зовнішній відступ (до ширини блоку не входить) */
+    margin: 20px;                   
     background-color: #bfeaff;
 }
 
 section:nth-of-type(1) > div:nth-of-type(1) {
     box-sizing: content-box;
-    /* width задає лише ширину вмісту, padding і border додаються зверху.
-       Загальна ширина: 300 + 2 * 20 + 2 * 5 = 350px */
 }
 
 section:nth-of-type(1) > div:nth-of-type(2) {
     box-sizing: border-box;
     background-color: #8fd3f4;
-    /* width охоплює вміст + padding + border.
-       Загальна ширина: 300px (вміст при цьому звужується до 300 - 40 - 10 = 250px) */
 }
 
-/* =====================================================
-   ЧАСТИНА 2. overflow
-   Чотири однакові блоки з довгим текстом. Висота обмежена
-   max-height: 80px, тому текст не вміщається.
-   ===================================================== */
 section:nth-of-type(2) > div {
     display: inline-block;
-    vertical-align: top;            /* без цього overflow != visible зсуває вирівнювання по базовій лінії */
+    vertical-align: top;            
     box-sizing: border-box;
     width: 250px;
     max-height: 80px;
@@ -62,37 +48,34 @@ section:nth-of-type(2) > div {
 }
 
 section:nth-of-type(2) > div:nth-of-type(1) {
-    overflow: visible;   /* за замовчуванням: зайвий текст виходить за межі блоку й накладається на вміст нижче */
+    overflow: visible;   
 }
 
 section:nth-of-type(2) > div:nth-of-type(2) {
-    overflow: hidden;    /* зайвий текст обрізається й недоступний */
+    overflow: hidden;   
 }
 
 section:nth-of-type(2) > div:nth-of-type(3) {
-    overflow: scroll;    /* смуги прокрутки показуються завжди, навіть якщо вміст вміщається */
+    overflow: scroll;   
 }
 
 section:nth-of-type(2) > div:nth-of-type(4) {
-    overflow: auto;      /* смуги прокрутки з'являються тільки тоді, коли вміст не вміщається */
+    overflow: auto;      
 }
 
-/* =====================================================
-   ЧАСТИНА 3. display (горизонтальне меню без float і flex)
-   ===================================================== */
 ul {
     margin: 0 0 0 20px;
     padding: 0;
-    list-style: none;               /* приховуємо маркери списку */
+    list-style: none;               
 }
 
 li {
-    display: inline-block;          /* пункти меню в один рядок */
+    display: inline-block;          
     background-color: #0d5a82;
 }
 
 li > a {
-    display: block;                 /* уся площа з відступами клікабельна */
+    display: block;               
     padding: 10px 20px;
     color: #ffffff;
     text-decoration: none;
@@ -103,16 +86,6 @@ li > a:hover {
     color: #0b3d55;
 }
 
-/* Приховуємо третій пункт меню («Про нас»).
-   display: none повністю прибирає елемент із відображення: він не займає
-   місця, сусідні пункти зсуваються, а його вміст недоступний для читання
-   з екрана й не отримує фокус.
-   Інші способи приховування працюють інакше:
-   - visibility: hidden  - елемент невидимий, але ЗАЛИШАЄ порожнє місце в розмітці;
-   - opacity: 0          - елемент прозорий, місце зберігається, а ще він
-                           залишається клікабельним і доступним для фокусу;
-   - position: absolute з великим від'ємним зсувом - елемент виводиться за
-                           межі екрана, але лишається в потоці для скрінрідерів. */
 li:nth-child(3) {
     display: none;
 }

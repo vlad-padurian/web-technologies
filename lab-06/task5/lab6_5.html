@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>task5</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page">
+
+  <section class="weather" aria-label="Погода">
+
+    <ul class="weather__forecast">
+      <li class="weather__day">
+        <span class="weather__day-name">Mon</span>
+        <span class="weather__day-temp">17°</span>
+      </li>
+      <li class="weather__day">
+        <span class="weather__day-name">Tue</span>
+        <span class="weather__day-temp">19°</span>
+      </li>
+      <li class="weather__day">
+        <span class="weather__day-name">Wed</span>
+        <span class="weather__day-temp">16°</span>
+      </li>
+      <li class="weather__day">
+        <span class="weather__day-name">Thu</span>
+        <span class="weather__day-temp">18°</span>
+      </li>
+      <li class="weather__day">
+        <span class="weather__day-name">Fri</span>
+        <span class="weather__day-temp">21°</span>
+      </li>
+    </ul>
+
+    <div class="weather__card">
+      <p class="weather__temp">17</p>
+    </div>
+
+    <div class="weather__cloud" role="img" aria-label="Хмарно"></div>
+
+    <button class="weather__nav weather__nav--prev" type="button"
+            data-label="Попередній день" aria-label="Попередній день">
+      <svg viewBox="0 0 48 24" width="48" height="24" aria-hidden="true">
+        <path d="M47 12H2M12 2L2 12l10 10" fill="none" stroke="#111" stroke-width="1.5"/>
+      </svg>
+    </button>
+    <button class="weather__nav weather__nav--next" type="button"
+            data-label="Наступний день" aria-label="Наступний день">
+      <svg viewBox="0 0 48 24" width="48" height="24" aria-hidden="true">
+        <path d="M1 12h45M36 2l10 10-10 10" fill="none" stroke="#111" stroke-width="1.5"/>
+      </svg>
+    </button>
+
+  </section>
+
+</body>
+</html>

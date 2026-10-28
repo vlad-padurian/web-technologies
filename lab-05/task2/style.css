@@ -7,7 +7,6 @@ table {
     width: 100%;
     max-width: 1240px;
     border-collapse: collapse;
-    table-layout: fixed;
 }
 
 th,

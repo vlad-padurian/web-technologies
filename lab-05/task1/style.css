@@ -68,14 +68,14 @@ span {
     display: inline-block;
 }
 
-.lvl-1-title {
+.plan-title-inner {
     font-size: 20px;
     font-weight: 700;
     background-color: rgb(199, 124, 106);
     margin-bottom: 10px;
 }
 
-.lvl-2-title {
+.plan-subtitle-inner{
     background-color: rgb(218, 106, 32);
 }
 

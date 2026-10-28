@@ -1,0 +1,276 @@
+/* ===== ФОРМА ===== */
+.form {
+  box-sizing: border-box;        /* width 600px включає padding і рамку */
+  width: 600px;
+  margin: 40px auto;             /* auto по боках = центр сторінки */
+  padding: 30px;
+  border: 5px solid #ffd166;
+  border-radius: 16px;
+  background: linear-gradient(to bottom right, #1f1c2c, #928dab);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: white;
+}
+
+/* ===== ЗАГОЛОВОК ===== */
+.form-title {
+  position: relative;            /* точка відліку для ліній ::before / ::after */
+  margin: 0 0 20px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+}
+
+/* Перша літера заголовка: велика і жовта */
+.form-title::first-letter {
+  font-size: 48px;
+  color: #ffd166;
+}
+
+/* Лінії ліворуч і праворуч від заголовка (спільні властивості) */
+.form-title::before,
+.form-title::after {
+  content: '';                   /* без content псевдоелемент не з'явиться */
+  position: absolute;
+  top: 50%;                      /* по вертикалі посередині заголовка */
+  transform: translateY(-50%);   /* компенсує половину висоти лінії */
+  width: 60px;
+  height: 3px;
+  background-color: #ffd166;
+  transition: width 0.3s, background-color 0.3s;  /* плавне подовження */
+}
+.form-title::before { left: 20px; }
+.form-title::after  { right: 20px; }
+
+/* Наведення на заголовок: лінії подовжуються і стають зеленими */
+.form-title:hover::before,
+.form-title:hover::after {
+  width: 90px;
+  background-color: #06d6a0;
+}
+
+/* ===== ВСТУПНИЙ ТЕКСТ ===== */
+.form-intro {
+  margin: 0 0 20px;
+  font-size: 16px;
+  color: #e8e6f2;
+}
+
+/* Перший рядок тексту: жовтий і жирний */
+.form-intro::first-line {
+  color: #ffd166;
+  font-weight: 700;
+}
+
+/* ===== ДВА СТОВПЦІ ПОЛІВ (float + clearfix) ===== */
+.form-fields::after {
+  display: block;
+  content: '';
+  clear: both;                   /* контейнер «охоплює» плаваючі групи і не схлопується */
+}
+
+.form-group {
+  float: left;
+  width: 48%;
+  margin-bottom: 15px;
+}
+
+/* Непарні групи (1,3,5) отримують відступ справа, парні (2,4,6) ні:
+   так утворюється проміжок між стовпцями: 48% + 4% + 48% = 100% */
+.form-fields .form-group:nth-child(odd)  { margin-right: 4%; }
+.form-fields .form-group:nth-child(even) { margin-right: 0; }
+
+/* «Про себе» не в стовпці, а на всю ширину */
+.form-group--full {
+  float: none;
+  width: 100%;
+}
+
+/* ===== ПІДПИСИ ===== */
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 18px;
+  color: white;
+}
+
+/* Червона зірочка після підпису обов'язкових полів */
+.form-label--required::after {
+  content: ' *';
+  color: #ff6b6b;
+}
+
+/* ===== ПОЛЯ ВВЕДЕННЯ ===== */
+.form-input {
+  box-sizing: border-box;        /* інакше 100% + padding вийдуть за межі групи */
+  width: 100%;
+  height: 36px;
+  padding: 0 10px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  color: #222;
+  background-color: #f1ecff;
+  border: none;
+  border-bottom: 4px solid transparent;  /* місце під колір, що змінюватиметься */
+  border-radius: 8px;
+}
+
+/* Порядок: спочатку :hover, потім :focus, щоб фокус «перемагав» наведення */
+.form-input:hover {
+  border-bottom-color: #ffd166;
+}
+.form-input:focus {
+  outline: none;                 /* підсвітку заміняє нижня границя */
+  border-bottom-color: #06d6a0;
+  background-color: #ffffff;
+}
+
+/* Поля пароля: інші кольори. Стоять нижче, тому перекривають загальні правила */
+.form-input--password:hover {
+  border-bottom-color: #ff9f1c;
+}
+.form-input--password:focus {
+  border-bottom-color: #00b4d8;
+  background-color: #ffffff;
+}
+
+/* ===== БАГАТОРЯДКОВЕ ПОЛЕ ===== */
+.form-textarea {
+  display: block;                /* прибирає невеликий зазор під textarea */
+  box-sizing: border-box;
+  width: 100%;
+  height: 80px;
+  padding: 5px;
+  font-family: inherit;
+  font-size: 16px;
+  color: #222;
+  background-color: #f1ecff;
+  border: none;
+  border-radius: 8px;
+  resize: none;                  /* забороняє тягнути за куточок */
+}
+.form-textarea:hover {
+  box-shadow: 0 0 10px 5px rgba(255, 209, 102, 0.6);  /* розмиття 10px, розтягнення 5px */
+}
+.form-textarea:focus {
+  outline: none;
+  box-shadow: 0 0 10px 5px rgba(6, 214, 160, 0.6);
+}
+
+/* ===== СПИСОК ВИМОГ ДО ПАРОЛЯ ===== */
+.form-hints {
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;              /* прибираємо стандартні маркери, зробимо свої */
+  font-size: 18px;
+}
+.form-hints li {
+  margin-bottom: 8px;
+}
+
+/* Позиційні псевдокласи */
+.form-hints li:first-child { font-weight: 700; }
+.form-hints li:last-child  { margin-bottom: 0; }
+.form-hints li:nth-child(odd)  { color: white; }
+.form-hints li:nth-child(even) { color: #d9d9e3; }
+
+/* Маркер-кружечок без картинок */
+.form-hints li::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ffd166;
+  margin-right: 12px;
+}
+.form-hints li:hover::before {
+  background-color: #06d6a0;
+}
+
+/* ===== ЧЕКБОКС І ПОСИЛАННЯ ===== */
+.form-rules {
+  margin: 0 0 20px;
+  font-size: 18px;
+}
+
+/* Порядок LVHA: link, visited, hover, active */
+.rules-link:link    { color: #ffd166; }
+.rules-link:visited { color: #c9b6ff; }
+.rules-link:hover   { color: white; text-decoration: underline; }
+.rules-link:active  { color: #ef476f; }
+
+/* ===== КНОПКИ ===== */
+.form-buttons {
+  text-align: right;             /* кнопки (inline-block) притискаються до правого краю */
+}
+
+.btn {
+  box-sizing: border-box;
+  min-width: 150px;          /* було width: 150px */
+  height: 44px;
+  padding: 0 16px;           /* повітря між текстом і рамкою */
+  white-space: nowrap;       /* текст не переноситься на другий рядок */
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: transparent;
+  border-radius: 0;
+}
+.btn:last-child {
+  margin-left: 15px;             /* проміжок між кнопками */
+}
+
+/* Кнопка скасування */
+.btn-reset {
+  border: 3px solid #ef476f;
+  color: #ef476f;
+}
+.btn-reset:hover {
+  border: 3px solid #ef476f;
+  color: white;
+  background-color: #ef476f;
+  border-radius: 15px;
+}
+.btn-reset:focus {
+  outline: 3px dashed #ffd166;
+}
+.btn-reset:active {
+  border: 3px solid #ffd166;
+  background-color: #a8203d;
+  border-radius: 25px;
+  position: relative;
+  top: 2px;                      /* ефект «вдавлювання» */
+}
+.btn-reset:active::after {
+  content: ' ✖';                 /* іконка з'являється лише поки кнопку тримають */
+}
+
+/* Кнопка відправки */
+.btn-submit {
+  border: 3px solid #06d6a0;
+  color: #06d6a0;
+}
+.btn-submit:hover {
+  border: 3px solid #06d6a0;
+  color: white;
+  background-color: #06d6a0;
+  border-radius: 15px;
+}
+.btn-submit:focus {
+  outline: 3px dashed #ffd166;
+}
+.btn-submit:active {
+  border: 3px solid #ffd166;
+  background-color: #04785a;
+  border-radius: 25px;
+  position: relative;
+  top: 2px;
+}
+.btn-submit:active::after {
+  content: ' ✔';
+}
