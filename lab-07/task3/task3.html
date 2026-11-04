@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Погода: New York, NY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="weather">
+
+    <header class="current">
+      <h1 class="current__city">New York, NY</h1>
+      <p class="current__date">Tuesday, April 15th</p>
+      <p class="current__sky">Overcast</p>
+
+      <div class="current__row">
+        <div class="current__main">
+          <img class="current__icon" src="icons/cloud.svg" alt="Overcast">
+          <p class="current__temp">58<span class="current__unit">°F</span></p>
+        </div>
+
+        <ul class="current__details">
+          <li>Precipitation: <b>100%</b></li>
+          <li>Humidity: <b>97%</b></li>
+          <li>Wind: <b>4 mph SW</b></li>
+          <li>Pollen Count: <b>36</b></li>
+        </ul>
+      </div>
+    </header>
+
+   
+    <ul class="forecast">
+      <li class="day">
+        <span class="day__name">Today</span>
+        <span class="day__icon"><img src="icons/storm.svg" alt="Thunderstorm"></span>
+        <span class="day__temp"><b>68°</b><i>36°</i></span>
+        <span class="day__pollen">Pollen 36</span>
+      </li>
+      <li class="day">
+        <span class="day__name">Wednesday</span>
+        <span class="day__icon"><img src="icons/sun.svg" alt="Sunny"></span>
+        <span class="day__temp"><b>50°</b><i>39°</i></span>
+        <span class="day__pollen">Pollen 36</span>
+      </li>
+      <li class="day">
+        <span class="day__name">Thursday</span>
+        <span class="day__icon"><img src="icons/sun.svg" alt="Sunny"></span>
+        <span class="day__temp"><b>55°</b><i>39°</i></span>
+        <span class="day__pollen">Pollen 36</span>
+      </li>
+      <li class="day">
+        <span class="day__name">Friday</span>
+        <span class="day__icon"><img src="icons/partly-cloudy.svg" alt="Partly cloudy"></span>
+        <span class="day__temp"><b>54°</b><i>43°</i></span>
+        <span class="day__pollen">Pollen 36</span>
+      </li>
+      <li class="day">
+        <span class="day__name">Saturday</span>
+        <span class="day__icon"><img src="icons/rain.svg" alt="Rain"></span>
+        <span class="day__temp"><b>64°</b><i>46°</i></span>
+        <span class="day__pollen">Pollen 36</span>
+      </li>
+      <li class="day">
+        <span class="day__name">Sunday</span>
+        <span class="day__icon"><img src="icons/rain.svg" alt="Rain"></span>
+        <span class="day__temp"><b>64°</b><i>50°</i></span>
+        <span class="day__pollen">Pollen 36</span>
+      </li>
+      <li class="day">
+        <span class="day__name">Monday</span>
+        <span class="day__icon"><img src="icons/partly-cloudy.svg" alt="Partly cloudy"></span>
+        <span class="day__temp"><b>61°</b><i>50°</i></span>
+        <span class="day__pollen">Pollen 36</span>
+      </li>
+    </ul>
+
+  </main>
+</body>
+</html>
