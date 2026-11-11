@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    background: #fff;
+}
+
+.tree {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(12, 31px);
+    grid-auto-flow: column;      
+    gap: 6px;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    counter-reset: block;        
+}
+
+.block {
+    background: #ffd740;
+    color: #fff;
+    font-family: "Times New Roman", serif;
+    font-size: 16px;
+    text-align: center;
+    padding-top: 4px;
+
+    counter-increment: block;   
+}
+
+.block::before {
+    content: counter(block);
+}
+
+.l1 { grid-row: span 12; }   /* 1 блок  на всю висоту */
+.l2 { grid-row: span 6;  }   /* 2 блоки по 6 рядків   */
+.l3 { grid-row: span 4;  }   /* 3 блоки по 4 рядки    */
+.l4 { grid-row: span 3;  }   /* 4 блоки по 3 рядки    */
+.l5 { grid-row: span 2;  }   /* 6 блоків по 2 рядки   */
+.l6 { grid-row: span 1;  }   /* 12 блоків по 1 рядку  */
